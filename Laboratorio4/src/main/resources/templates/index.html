@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingresar producto</title>
+</head>
+<body>
+    <h1>Ingresar Producto</h1>
+    <form th:action="formProducto" th:object="${producto}" method="post">
+        <label for="nombre">Nombre del producto: </label>
+        <input type="text" name="nombre" id="nombre" th:field="*{nombre}">
+        <span th:errors="*{nombre}" style="color: red;"></span>
+        <br>
+        <label for="descripcion">Descripcion del producto: </label>
+        <input type="text" name="descripcion" id="descripcion" th:field="*{descripcion}">
+        <span th:errors="*{descripcion}" style="color: red;"></span>
+        <br>
+        <label for="precio">Precio del producto: </label>
+        <input type="text" name="precio" id="precio" th:field="*{precio}">
+        <span th:errors="*{precio}" style="color: red;"></span>
+        <br>
+        <label for="fechaVencimiento">Fecha de vencimiento del producto: </label>
+        <input type="text" name="fechaVencimiento" id="fechaVencimiento" th:field="*{fechaVencimiento}">
+        <span th:errors="*{fechaVencimiento}" style="color: red;"></span>
+        <br>
+        <input type="submit" value="Agregar producto">
+    </form>
+</body>
+</html>
